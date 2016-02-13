@@ -1,0 +1,24 @@
+{
+  "name": "joose-utils",
+  "description": "Lightweight utility functions, part of the joose component library",
+  "main": "js/joose-utils.js",
+  "authors": [
+    "Phil Gibbins <scoobster17@hotmail.co.uk> (http://www.philgibbins.com)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "joose",
+    "utils",
+    "utilities",
+    "joose-utils"
+  ],
+  "homepage": "https://github.com/scoobster17/joose-utils",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

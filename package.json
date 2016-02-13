@@ -1,0 +1,25 @@
+{
+  "name": "joose-utils",
+  "version": "1.0.0",
+  "description": "Lightweight utility functions, part of the joose component library",
+  "main": "js/joose-utils.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scoobster17/joose-utils.git"
+  },
+  "keywords": [
+    "joose",
+    "utils",
+    "utilities",
+    "joose-utils"
+  ],
+  "author": "Phil Gibbins <scoobster17@hotmail.co.uk> (http://www.philgibbins.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scoobster17/joose-utils/issues"
+  },
+  "homepage": "https://github.com/scoobster17/joose-utils"
+}
