@@ -2,7 +2,6 @@
 
 // private shared variables
 let classList;
-const classRegex = new RegExp('(^| )(' + classToCheck + ')( |$)');
 
 /*
     CHECK IF AN ELEMENT HAS A CLASS
@@ -23,6 +22,8 @@ const hasClass = function(elem, classToCheck) {
 
     // if the element has a class attribute
     if (classList !== null) {
+
+        const classRegex = new RegExp('(^| )(' + classToCheck + ')( |$)');
 
         // check for the class
         return classList.match(classRegex) !== null;
@@ -161,19 +162,20 @@ const convertObjectToString = function(object, arraySeparator, propertySeparator
     Each method can be imported individually, or they can all be imported in the
     form of the 'utils' object
  */
-export {
-    hasClass,
-    addClass,
-    removeClass,
-    toggleClass,
-    convertStringToObject,
-    convertObjectToString
-}
-export default utils = {
+const utils = {
 	hasClass,
 	addClass,
     removeClass,
     toggleClass,
     convertStringToObject,
     convertObjectToString
+};
+export {
+    hasClass,
+    addClass,
+    removeClass,
+    toggleClass,
+    convertStringToObject,
+    convertObjectToString,
+    utils as default
 };
