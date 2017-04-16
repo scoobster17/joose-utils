@@ -1,7 +1,7 @@
 "use strict";
 
 // private shared variables
-const classList;
+let classList;
 const classRegex = new RegExp('(^| )(' + classToCheck + ')( |$)');
 
 /*
@@ -16,7 +16,7 @@ const hasClass = function(elem, classToCheck) {
     if (!elem || !classToCheck) return false;
 
     // ensure the class to check is a string, converting it if not
-    const classToCheck = '' + classToCheck;
+    classToCheck = '' + classToCheck;
 
     // get the elem's classes
     classList = elem.getAttribute('class');
@@ -161,12 +161,14 @@ const convertObjectToString = function(object, arraySeparator, propertySeparator
     Each method can be imported individually, or they can all be imported in the
     form of the 'utils' object
  */
-export hasClass;
-export addClass;
-export removeClass;
-export toggleClass;
-export convertStringToObject;
-export convertObjectToString;
+export {
+    hasClass,
+    addClass,
+    removeClass,
+    toggleClass,
+    convertStringToObject,
+    convertObjectToString
+}
 export default utils = {
 	hasClass,
 	addClass,
