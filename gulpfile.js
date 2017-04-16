@@ -28,8 +28,8 @@ var appName = 'joose-utils';
 var filePaths = {
 	allFilesInAllFolders: '**/*',
 	js: {
-		src: 'src/es2015/js/',
-		dist: 'src/es5/js/'
+		src: 'es2015/js/',
+		dist: 'es5/js/'
 	}
 };
 var fileExtensions = {
