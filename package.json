@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node_modules/.bin/gulp transpile-to-es5",
     "build-test-es2015": "node_modules/.bin/gulp transpile-to-es5 --test es2015",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/.bin/gulp run-unit-tests --test es2015"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,16 @@
     "browserify": "^14.3.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
+    "gulp-clean": "^0.3.2",
+    "gulp-open": "^2.0.0",
     "gulp-uglify": "^2.1.2",
+    "jasmine": "^2.5.3",
+    "karma": "^1.6.0",
+    "karma-html-reporter": "^0.2.7",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-spec-reporter": "0.0.31",
+    "phantomjs": "^2.1.7",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "yargs": "^7.1.0"
