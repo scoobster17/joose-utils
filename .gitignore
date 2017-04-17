@@ -1,5 +1,9 @@
+# Third party code
 node_modules/
 
+# Editor
 *.sublime*
 
+# Testing
+test/es5/
 test/report/
