@@ -1,14 +1,15 @@
-// import the unit from joose-utils
-import { toggleClass } from '../../js/es2015/joose-utils.js';
+// import the unit, both directly and indirectly from joose-utils
+import utils, { toggleClass } from '../../js/es2015/joose-utils.js';
 
 // define tests for the unit
-const toggleClassTests = () => {
+const runToggleClassTests = () => {
 
+	// get DOM elements to interrogate
 	const body = document.querySelector('body');
 
 	describe('Testing joose-utils toggleClass()', () => {
 
-		// set up the DOM for tests
+		// before all tests run, remove any classes from the BODY element
 		beforeAll(() => {
 			body.removeAttribute('class');
 		});
@@ -23,8 +24,12 @@ const toggleClassTests = () => {
 			expect(body.getAttribute('class')).toEqual('');
 		});
 
+		it('runs the same code when called directly and indirectly', () => {
+			expect(toggleClass).toEqual(utils.toggleClass);
+		});
+
 	});
 
 };
 
-export default toggleClassTests;
+export default runToggleClassTests;

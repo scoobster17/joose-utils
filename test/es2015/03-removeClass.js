@@ -1,14 +1,15 @@
-// import the unit from joose-utils
-import { removeClass } from '../../js/es2015/joose-utils.js';
+// import the unit, both directly and indirectly from joose-utils
+import utils, { removeClass } from '../../js/es2015/joose-utils.js';
 
 // define tests for the unit
-const removeClassTests = () => {
+const runRemoveClassTests = () => {
 
+	// get DOM elements to interrogate
 	const body = document.querySelector('body');
 
 	describe('Testing joose-utils removeClass()', () => {
 
-		// set up the DOM for tests
+		// before each test runs, add some classes to the BODY element
 		beforeEach(() => {
 			body.setAttribute('class', 'testClass3 test testClass4');
 		});
@@ -28,8 +29,12 @@ const removeClassTests = () => {
 			expect(body.getAttribute('class')).toEqual('testClass3 testClass4');
 		});
 
+		it('runs the same code when called directly and indirectly', () => {
+			expect(removeClass).toEqual(utils.removeClass);
+		});
+
 	});
 
 };
 
-export default removeClassTests;
+export default runRemoveClassTests;

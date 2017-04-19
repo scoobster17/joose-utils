@@ -1,11 +1,15 @@
 // import tests
-import hasClassTests from './01-hasClass.js';
-import addClassTests from './02-addClass.js';
-import removeClassTests from './03-removeClass.js';
-import toggleClassTests from './04-toggleClass.js';
+import runHasClassTests from './01-hasClass.js';
+import runAddClassTests from './02-addClass.js';
+import runRemoveClassTests from './03-removeClass.js';
+import runToggleClassTests from './04-toggleClass.js';
+import runConvertStringToObjectTests from './05-convertStringToObject.js';
+import runConvertObjectToStringTests from './06-convertObjectToString.js';
 
 // run tests
-hasClassTests();
-addClassTests();
-removeClassTests();
-toggleClassTests();
+runHasClassTests();
+runAddClassTests();
+runRemoveClassTests();
+runToggleClassTests();
+runConvertStringToObjectTests();
+runConvertObjectToStringTests();

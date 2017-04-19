@@ -114,10 +114,14 @@ const toggleClass = function(elem, classToToggle) {
     CONVERT A NON JSON FRIENDLY STRING TO AN OBJECT
     ----------------------------------------------------------------------------
     @param string               [string]
-    @param arraySeperator       [string]
-    @param propertySeperator    [string]
+    @param arraySeparator       [string]
+    @param propertySeparator    [string]
 */
 const convertStringToObject = function(string, arraySeparator = ',', propertySeparator = '=') {
+
+    // cannot have the same separator, as we won't be able to distinguish
+    // between properties and values
+    if (arraySeparator == propertySeparator) return false;
 
     let object = {};
 
@@ -142,10 +146,18 @@ const convertStringToObject = function(string, arraySeparator = ',', propertySep
     CONVERT AN OBJECT TO A NON JSON FRIENDLY STRING
     ----------------------------------------------------------------------------
     @param object               [object]
-    @param arraySeperator       [string]
-    @param propertySeperator    [string]
+    @param arraySeparator       [string]
+    @param propertySeparator    [string]
 */
 const convertObjectToString = function(object, arraySeparator, propertySeparator) {
+
+    /*if (
+        typeof object !== 'object' ||
+        !(typeof arraySeparator === 'string' && arraySeparator.length) ||
+        !(typeof propertySeparator === 'string' && propertySeparator.length)
+    ) {
+        return false;
+    }*/
 
     let string = '';
 

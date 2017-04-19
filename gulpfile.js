@@ -34,8 +34,8 @@ var appName = 'joose-utils';
 var filePaths = {
 	allFilesInAllFolders: '**/*',
 	js: {
-		src: 'es2015/js/',
-		dist: 'es5/js/'
+		src: 'js/es2015/',
+		dist: 'js/es5/'
 	},
 	test: {
 		es2015: {
