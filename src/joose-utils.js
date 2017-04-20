@@ -12,7 +12,7 @@ let classList;
 const hasClass = function(elem, classToCheck) {
 
     // check arguments have been supplied
-    if (!elem || !classToCheck) return false;
+    if (!elem || !classToCheck) return;
 
     // ensure the class to check is a string, converting it if not
     classToCheck = '' + classToCheck;
@@ -45,6 +45,9 @@ const hasClass = function(elem, classToCheck) {
 */
 const addClass = function(elem, classToAdd) {
 
+    // check arguments have been supplied
+    if (!elem || !classToAdd) return false;
+
     // check the elem doesn't already have the class and cancel if it does
     if (hasClass(elem, classToAdd)) return false;
 
@@ -62,6 +65,9 @@ const addClass = function(elem, classToAdd) {
     @param CLASSTOREMOVE    [string]    the class to remove
 */
 const removeClass = function(elem, classToRemove) {
+
+    // check arguments have been supplied
+    if (!elem || !classToRemove) return false;
 
     // check the elem has the class and cancel if it doesn't
     if (!hasClass(elem, classToRemove)) return false;
@@ -96,6 +102,9 @@ const removeClass = function(elem, classToRemove) {
 */
 const toggleClass = function(elem, classToToggle) {
 
+    // check arguments have been supplied
+    if (!elem || !classToToggle) return false;
+
     // check whether the element has the class
     if (hasClass(elem, classToToggle)) {
 
@@ -119,9 +128,10 @@ const toggleClass = function(elem, classToToggle) {
 */
 const convertStringToObject = function(string, arraySeparator = '&', propertySeparator = '=') {
 
+    // check arguments have been supplied AND
     // cannot have the same separator, as we won't be able to distinguish
     // between properties and values
-    if (arraySeparator == propertySeparator) return false;
+    if (typeof string != 'string' || arraySeparator == propertySeparator) return false;
 
     let object = {};
 
@@ -149,15 +159,15 @@ const convertStringToObject = function(string, arraySeparator = '&', propertySep
     @param arraySeparator       [string]
     @param propertySeparator    [string]
 */
-const convertObjectToString = function(object, arraySeparator, propertySeparator) {
+const convertObjectToString = function(object, arraySeparator = '&', propertySeparator = '=') {
 
-    /*if (
+    if (
         typeof object !== 'object' ||
-        !(typeof arraySeparator === 'string' && arraySeparator.length) ||
-        !(typeof propertySeparator === 'string' && propertySeparator.length)
+        (typeof arraySeparator !== 'string' || !arraySeparator.length) ||
+        (typeof propertySeparator !== 'string' || !propertySeparator.length)
     ) {
         return false;
-    }*/
+    }
 
     let string = '';
 
