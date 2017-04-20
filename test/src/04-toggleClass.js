@@ -1,5 +1,5 @@
 // import the unit, both directly and indirectly from joose-utils
-import utils, { toggleClass } from '../../js/es2015/joose-utils.js';
+import utils, { toggleClass } from '../../src/joose-utils.js';
 
 // define tests for the unit
 const runToggleClassTests = () => {

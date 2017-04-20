@@ -1,5 +1,5 @@
 // import the unit, both directly and indirectly from joose-utils
-import utils, { convertObjectToString } from '../../js/es2015/joose-utils.js';
+import utils, { convertObjectToString } from '../../src/joose-utils.js';
 
 // define tests for the unit
 const runConvertObjectToStringTests = () => {

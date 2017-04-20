@@ -5,5 +5,5 @@ node_modules/
 *.sublime*
 
 # Testing
-test/es5/
+test/dist/
 test/report/

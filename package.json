@@ -5,7 +5,6 @@
   "main": "js/joose-utils.js",
   "scripts": {
     "build": "node_modules/.bin/gulp transpile-to-es5",
-    "build-test-es2015": "node_modules/.bin/gulp transpile-to-es5 --test es2015",
     "test": "node_modules/.bin/gulp run-unit-tests --test es2015"
   },
   "repository": {

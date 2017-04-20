@@ -9,7 +9,7 @@ module.exports = function(config) {
         browsers: ['PhantomJS'],
 
         files: [
-            'test/es5/*.js'
+            'test/dist/*.js'
         ],
 
         frameworks: ['jasmine'],

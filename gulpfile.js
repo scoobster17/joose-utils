@@ -34,27 +34,19 @@ var appName = 'joose-utils';
 var filePaths = {
 	allFilesInAllFolders: '**/*',
 	js: {
-		src: 'js/es2015/',
-		dist: 'js/es5/'
+		src: 'src/',
+		dist: 'dist/'
 	},
 	test: {
-		es2015: {
-			src: 'test/es2015/',
-			dist: 'test/es5/'
-		},
+		src: 'test/src/',
+		dist: 'test/dist/',
 		report: './test/report/'
 	}
 };
 var fileNames = {
 	test: {
-		es2015: {
-			src: 'spec',
-			dist: 'es2015-test'
-		},
-		es5: {
-			src: 'es5-test',
-			dist: 'es5-test'
-		},
+		src: 'spec',
+		dist: 'spec',
 		report: 'unit-test-report'
 	}
 }
@@ -86,9 +78,9 @@ gulp.task('transpile-to-es5', function() {
 
 		case 'es2015':
 			console.log('\nRunning es2015 test transpilation...');
-			input = './' + filePaths.test.es2015.src + fileNames.test.es2015.src + fileExtensions.js.src;
-			outputFileName = fileNames.test.es2015.dist + fileExtensions.js.dist;
-			outputDir = './' + filePaths.test.es2015.dist;
+			input = './' + filePaths.test.src + fileNames.test.src + fileExtensions.js.src;
+			outputFileName = fileNames.test.dist + fileExtensions.js.dist;
+			outputDir = './' + filePaths.test.dist;
 			break;
 
 		default:
