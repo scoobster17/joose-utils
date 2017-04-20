@@ -2,6 +2,10 @@
 
 // private shared variables
 let classList;
+const DEFAULTS = {
+    ARRAY_SEPARATOR: '&',
+    PROPERTY_SEPARATOR: '='
+};
 
 /*
     CHECK IF AN ELEMENT HAS A CLASS
@@ -126,7 +130,7 @@ const toggleClass = function(elem, classToToggle) {
     @param arraySeparator       [string]
     @param propertySeparator    [string]
 */
-const convertStringToObject = function(string, arraySeparator = '&', propertySeparator = '=') {
+const convertStringToObject = function(string, arraySeparator = DEFAULTS.ARRAY_SEPARATOR, propertySeparator = DEFAULTS.PROPERTY_SEPARATOR) {
 
     // check arguments have been supplied AND
     // cannot have the same separator, as we won't be able to distinguish
@@ -159,7 +163,7 @@ const convertStringToObject = function(string, arraySeparator = '&', propertySep
     @param arraySeparator       [string]
     @param propertySeparator    [string]
 */
-const convertObjectToString = function(object, arraySeparator = '&', propertySeparator = '=') {
+const convertObjectToString = function(object, arraySeparator = DEFAULTS.ARRAY_SEPARATOR, propertySeparator = DEFAULTS.PROPERTY_SEPARATOR) {
 
     if (
         typeof object !== 'object' ||
