@@ -117,7 +117,7 @@ const toggleClass = function(elem, classToToggle) {
     @param arraySeparator       [string]
     @param propertySeparator    [string]
 */
-const convertStringToObject = function(string, arraySeparator = ',', propertySeparator = '=') {
+const convertStringToObject = function(string, arraySeparator = '&', propertySeparator = '=') {
 
     // cannot have the same separator, as we won't be able to distinguish
     // between properties and values

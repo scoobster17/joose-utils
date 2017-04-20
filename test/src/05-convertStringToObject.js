@@ -5,7 +5,7 @@ import utils, { convertStringToObject } from '../../src/joose-utils.js';
 const runConvertStringToObjectTests = () => {
 
 	// set a test string to interrogate
-	const string = 'something1=a,something2=b';
+	const string = 'something1=a&something2=b';
 	const string2 = 'something1=a;something2=b';
 	const string3 = 'something1-a;something2-b';
 	const string4 = 'something1-a|something2-b';
@@ -18,7 +18,7 @@ const runConvertStringToObjectTests = () => {
 
 		it('Has the intended number of properties using the default array separator (and the default property separator)', () => {
 			expect(Object.keys(convertStringToObject(string)).length)
-				.toEqual(string.split(',').length);
+				.toEqual(string.split('&').length);
 		});
 
 		it('Has the intended number of properties using a custom array separator (and the default property separator)', () => {
@@ -54,8 +54,8 @@ const runConvertStringToObjectTests = () => {
 		it('Has properties that match the intended properties when using the default array separator', () => {
 			expect(Object.keys(convertStringToObject(string)))
 				.toEqual(
-					string.split(',').map((element, index, array) => {
-						return element.replace(/=[^\=]+/,'');
+					string.split('&').map((element, index, array) => {
+						return element.replace(/\=[^\=]+$/,'');
 					})
 				);
 		});
@@ -79,7 +79,7 @@ const runConvertStringToObjectTests = () => {
 		*/
 
 		it('fails when the array separator and the property separator are the same', () => {
-			expect(convertStringToObject(string, ',', ',')).toEqual(false);
+			expect(convertStringToObject(string, '&', '&')).toEqual(false);
 		});
 
 		it('Runs the same code when called directly and indirectly', () => {
