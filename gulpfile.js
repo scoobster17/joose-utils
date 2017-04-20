@@ -122,7 +122,8 @@ gulp.task('transpile-to-es5', function() {
  */
 gulp.task('run-unit-tests', ['delete-unit-test-report', 'transpile-to-es5'], function(done) {
 	return new karmaServer({
-		configFile: __dirname + '/karma.conf.js',
+		basePath: '../',
+		configFile: require('path').resolve('test/karma.conf.js'),
 		singleRun: true
 	}, function() {
 		done(); // console stacktrace if not in anon func
