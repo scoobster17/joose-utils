@@ -167,6 +167,7 @@ const convertObjectToString = function(object, arraySeparator = DEFAULTS.ARRAY_S
 
     if (
         typeof object !== 'object' ||
+        Object.prototype.toString.call( object ) !== '[object Object]' ||
         (typeof arraySeparator !== 'string' || !arraySeparator.length) ||
         (typeof propertySeparator !== 'string' || !propertySeparator.length)
     ) {

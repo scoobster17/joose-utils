@@ -16,6 +16,14 @@ const runConvertObjectToStringTests = () => {
 			expect(typeof convertObjectToString(object)).toEqual('string');
 		});
 
+		it('Fails when an object is not passed', () => {
+			expect(convertObjectToString('string')).toEqual(false);
+			expect(convertObjectToString([1,2,3])).toEqual(false);
+			expect(convertObjectToString(645)).toEqual(false);
+			expect(convertObjectToString(null)).toEqual(false);
+			expect(convertObjectToString(undefined)).toEqual(false);
+		});
+
 		// make sure the string contains the right number of properties
 		//
 		// make sure the correct array seperator is used

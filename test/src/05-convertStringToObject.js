@@ -16,6 +16,14 @@ const runConvertStringToObjectTests = () => {
 			expect(typeof convertStringToObject(string)).toEqual('object');
 		});
 
+		it('Fails when a string is not passed', () => {
+			expect(convertStringToObject({ something: 'something' })).toEqual(false);
+			expect(convertStringToObject([1,2,3])).toEqual(false);
+			expect(convertStringToObject(645)).toEqual(false);
+			expect(convertStringToObject(null)).toEqual(false);
+			expect(convertStringToObject(undefined)).toEqual(false);
+		});
+
 		it('Has the intended number of properties using the default array separator (and the default property separator)', () => {
 			expect(Object.keys(convertStringToObject(string)).length)
 				.toEqual(string.split('&').length);
