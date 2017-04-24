@@ -74,13 +74,20 @@ gulp.task('transpile-to-es5', function() {
 	var outputDir;
 
 	// set config based on command params
-	switch (argv.test) {
+	switch (argv.files) {
 
-		case 'es2015':
+		case 'test':
 			console.log('\nRunning es2015 test transpilation...');
 			input = './' + filePaths.test.src + fileNames.test.src + fileExtensions.js.src;
 			outputFileName = fileNames.test.dist + fileExtensions.js.dist;
 			outputDir = './' + filePaths.test.dist;
+			break;
+
+		case 'es5':
+			console.log('\nRunning es5 browser transpilation...');
+			input = './' + filePaths.js.src + appName + '-es5' + fileExtensions.js.src;
+			outputFileName = appName + '-es5' + fileExtensions.js.dist;
+			outputDir = './' + filePaths.js.dist;
 			break;
 
 		default:

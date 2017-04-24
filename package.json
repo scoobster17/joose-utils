@@ -4,8 +4,8 @@
   "description": "Lightweight utility functions, part of the joose component library",
   "main": "js/joose-utils.js",
   "scripts": {
-    "build": "node_modules/.bin/gulp transpile-to-es5",
-    "test": "node_modules/.bin/gulp run-unit-tests --test es2015"
+    "build": "node_modules/.bin/gulp transpile-to-es5 && node_modules/.bin/gulp transpile-to-es5 --files es5",
+    "test": "node_modules/.bin/gulp run-unit-tests --files test"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
   "homepage": "https://github.com/scoobster17/joose-utils",
   "devDependencies": {
     "babel-core": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-env": "^1.4.0",
     "babelify": "^7.3.0",
     "browserify": "^14.3.0",
