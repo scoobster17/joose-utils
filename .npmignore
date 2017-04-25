@@ -1,0 +1,9 @@
+# No processing is needed once the package has been installed
+# Therefore ignoring development dependencies
+
+node_modules/
+test/
+.babelrc
+.gitignore
+gulpfile.js
+*.sublime*
