@@ -72,7 +72,7 @@ const runConvertStringToObjectTests = () => {
 			expect(Object.keys(convertStringToObject(string2, ';')))
 				.toEqual(
 					string2.split(';').map((element, index, array) => {
-						return element.replace(/=[^\=]+/,'');
+						return element.replace(/\=[^\=]+/,'');
 					})
 				);
 		});

@@ -177,10 +177,10 @@ const convertObjectToString = function(object, arraySeparator = DEFAULTS.ARRAY_S
     let string = '';
 
     for (let property in object) {
-        string += (property + propertySeparator + object[property] + arraySeparator + ' ');
+        string += (property + propertySeparator + object[property] + arraySeparator);
     }
 
-    return string.substring(0, string.length-2);
+    return string.substring(0, string.length-1);
 
 };
 

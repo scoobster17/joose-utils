@@ -24,15 +24,57 @@ const runConvertObjectToStringTests = () => {
 			expect(convertObjectToString(undefined)).toEqual(false);
 		});
 
-		// make sure the string contains the right number of properties
-		//
-		// make sure the correct array seperator is used
-		//
-		// make sure the correct properties seperator is used
-		//
-		// make sure all the properties match those supplied
-		//
-		// make sure all the values match those supplied
+		it('Make sure the string contains the right number of properties', () => {
+			expect(convertObjectToString(object).split('&').length).toEqual(2);
+		});
+
+		it('Make sure the correct default array separator is used', () => {
+			expect(convertObjectToString(object).indexOf('&')).not.toEqual(-1);
+		});
+
+		it('Make sure the correct custom array separator is used', () => {
+			expect(convertObjectToString(object, '|').indexOf('|')).not.toEqual(-1);
+		});
+
+		it('Make sure the correct default property separator is used', () => {
+			expect(convertObjectToString(object).indexOf('=')).not.toEqual(-1);
+		});
+
+		it('Make sure the correct custom property separator is used', () => {
+			expect(convertObjectToString(object, undefined, '-').indexOf('-'))
+				.not.toEqual(-1);
+		});
+
+		it('Has properties that match the intended properties when using the default array separator', () => {
+			expect(
+				convertObjectToString(object).split('&').map(
+					(element, index, array) => {
+						return element.replace(/\=[^\=]+$/,'');
+					}
+				)
+			)
+			.toEqual(Object.keys(object));
+		});
+
+		it('Has properties that match the intended properties when using a custom array separator', () => {
+			expect(
+				convertObjectToString(object, '|').split('|').map(
+					(element, index, array) => {
+						return element.replace(/\=[^\=]+$/,'');
+					}
+				)
+			)
+			.toEqual(Object.keys(object));
+		});
+
+		/*
+				MAY BE ADDED WHEN Object.values() ADDED TO (ES2017?)
+
+		// has values that match the intended values when using the default array separator
+
+		// has values that match the intended values when using a custom prop
+
+		*/
 
 		it('Runs the same code when called directly and indirectly', () => {
 			expect(convertObjectToString).toEqual(utils.convertObjectToString);
