@@ -14,15 +14,15 @@ const runHasClassTests = () => {
 			body.setAttribute('class', 'testClass');
 		});
 
-		it('returns true when an element has a class', () => {
+		it('Returns true when an element has a class', () => {
 			expect(hasClass(body, 'testClass')).toEqual(true);
 		});
 
-		it('returns false when an element does not have a class', () => {
+		it('Returns false when an element does not have a class', () => {
 			expect(hasClass(body, 'testClass2')).toEqual(false);
 		});
 
-		it('runs the same code when called directly and indirectly', () => {
+		it('Runs the same code when called directly and indirectly', () => {
 			expect(hasClass).toEqual(utils.hasClass);
 		});
 

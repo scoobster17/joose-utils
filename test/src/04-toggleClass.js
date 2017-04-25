@@ -14,17 +14,17 @@ const runToggleClassTests = () => {
 			body.removeAttribute('class');
 		});
 
-		it('adds a class when the class is not present', () => {
+		it('Adds a class when the class is not present', () => {
 			toggleClass(body, 'toggled-class');
 			expect(body.getAttribute('class')).toEqual('toggled-class');
 		});
 
-		it('removes a class when the class is present', () => {
+		it('Removes a class when the class is present', () => {
 			toggleClass(body, 'toggled-class');
 			expect(body.getAttribute('class')).toEqual('');
 		});
 
-		it('runs the same code when called directly and indirectly', () => {
+		it('Runs the same code when called directly and indirectly', () => {
 			expect(toggleClass).toEqual(utils.toggleClass);
 		});
 

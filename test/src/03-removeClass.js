@@ -14,22 +14,22 @@ const runRemoveClassTests = () => {
 			body.setAttribute('class', 'testClass3 test testClass4');
 		});
 
-		it('removes a class when first in class list', () => {
+		it('Removes a class when first in class list', () => {
 			removeClass(body, 'testClass3');
 			expect(body.getAttribute('class')).toEqual('test testClass4');
 		});
 
-		it('removes a class when not first in class list', () => {
+		it('Removes a class when not first in class list', () => {
 			removeClass(body, 'testClass4');
 			expect(body.getAttribute('class')).toEqual('testClass3 test');
 		});
 
-		it('removes a class, but does not affect other similar classes containing same string', () => {
+		it('Removes a class, but does not affect other similar classes containing same string', () => {
 			removeClass(body, 'test');
 			expect(body.getAttribute('class')).toEqual('testClass3 testClass4');
 		});
 
-		it('runs the same code when called directly and indirectly', () => {
+		it('Runs the same code when called directly and indirectly', () => {
 			expect(removeClass).toEqual(utils.removeClass);
 		});
 

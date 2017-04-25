@@ -86,7 +86,7 @@ const runConvertStringToObjectTests = () => {
 
 		*/
 
-		it('fails when the array separator and the property separator are the same', () => {
+		it('Fails when the array separator and the property separator are the same', () => {
 			expect(convertStringToObject(string, '&', '&')).toEqual(false);
 		});
 
