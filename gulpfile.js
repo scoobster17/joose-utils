@@ -103,7 +103,7 @@ gulp.task('transpile-to-es5', function() {
 	console.log('Output File: ', outputDir + outputFileName + '\n');
 
 	// transpile code to ES5
-	browserify(input)
+	return browserify(input)
 		.transform('babelify')
 		.bundle()
 		.pipe(source(outputFileName))
