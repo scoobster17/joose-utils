@@ -1,6 +1,6 @@
 {
   "name": "joose-utils",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Lightweight utility functions, part of the joose component library",
   "main": "src/joose-utils.js",
   "scripts": {
