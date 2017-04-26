@@ -2,7 +2,7 @@
   "name": "joose-utils",
   "version": "2.0.0",
   "description": "Lightweight utility functions, part of the joose component library",
-  "main": "dist/joose-utils.js",
+  "main": "src/joose-utils.js",
   "scripts": {
     "build": "node_modules/.bin/gulp transpile-to-es5 && node_modules/.bin/gulp transpile-to-es5 --files es5",
     "test": "node_modules/.bin/gulp run-unit-tests --files test"

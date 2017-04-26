@@ -6,39 +6,41 @@ Please see [joose](https://github.com/scoobster17/joose) for the whole component
 
 ## Installation
 
-To install this component independenty using [bower](http://bower.io/search/?q=joose-utils) use the following command:
-
-`bower install joose-utils`
-
 To install this component independently using [npm](https://www.npmjs.com/package/joose-utils)
 
 `npm install joose-utils`
 
 ## Usage
 
-Simply add the JavaScript onto your page either using a script tag or concatenating with your own JavaScript and you are good to go using the `joose.utils` object.
+### ES2015+
 
-Current methods:
+As of version 2, Joose Utils methods can be imported either individually or collectively:
 
-  * Class Handling
+`import utils from 'joose-utils';`
 
-    * Check if an element has a class  
-      `joose.utils.hasClass(elem, class);`
+`import { hasClass, addClass } from 'joose-utils';`
 
-    * Add a class to an element  
-      `joose.utils.addClass(elem, class);`
+### ES5
 
-    * Remove a class from an element  
-      `joose.utils.removeClass(elem, class);`
+Simply add the JavaScript onto your page either using a script tag or concatenating/bundling with your own JavaScript:
 
-    * Toggle whether an element has a class or not  
-      `joose.utils.toggleClass(elem, class);`
-  
-  * Conversions
+`<script type="text/javascript" src="/path/to/node_modules/joose-utils/dist/joose-utils-es5.js"></script>`
 
-    * Convert a string to an object  
-      (used in [joose-storage](https://github.com/scoobster17/joose-storage) for cookies)  
-      `joose.utils.convertStringToObject(string, arraySeparator, propertySeparator);`
+You are then good to go using the `joose.utils` object available in the global namespace:
 
-    * Convert an object to a string  
-      `joose.utils.convertObjectToString(object, arraySeparator, propertySeparator);`
+```
+joose.utils.hasClass(elem, class);
+joose.utils.toggleClass(elem, class);
+```
+
+## Methods available
+
+* Class Handling
+  * `hasClass(elem, class)` Check if an element has a class
+  * `addClass(elem, class)` Add a class to an element
+  * `removeClass(elem, class)` Remove a class from an element
+  * `toggleClass(elem, class)` Toggle whether an element has a class or not
+* Conversions
+  * `convertStringToObject(string, arraySeparator, propertySeparator)` Convert a string to an object
+    (used in [joose-storage](https://github.com/scoobster17/joose-storage) for cookies)
+  * `convertObjectToString(object, arraySeparator, propertySeparator)` Convert an object to a string
