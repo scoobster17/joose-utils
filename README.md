@@ -16,9 +16,9 @@ To install this component independently using [npm](https://www.npmjs.com/packag
 
 As of version 2, Joose Utils methods can be imported either individually or collectively:
 
-`import utils from 'joose-utils';`
+`import utils from '/path/to/node_modules/joose-utils/src/joose-utils';`
 
-`import { hasClass, addClass } from 'joose-utils';`
+`import { hasClass, addClass } from '/path/to/node_modules/joose-utils/src/joose-utils';`
 
 ### ES5
 
